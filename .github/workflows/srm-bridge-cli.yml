@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   srm:
-    runs-on: [self-hosted, windows]
+    runs-on: ubuntu-latest
     env:
       BRIDGE_SRM_URL: ${{ vars.SRM_URL }}
       BRIDGE_SRM_APIKEY: ${{ secrets.SRM_APIKEY }}
