@@ -22,7 +22,7 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       run: |
         curl -fLsS -o bridge.zip ${{ vars.BRIDGECLI_LINUX64 }} && unzip -qo -d $RUNNER_TEMP bridge.zip && rm -f bridge.zip
-        $RUNNER_TEMP/synopsys-bridge --verbose --stage connect \
+        $RUNNER_TEMP/synopsys-bridge --stage connect \
             coverity.connect.url=${{ vars.COVERITY_URL }} \
             coverity.connect.user.name=${{ secrets.COV_USER }} \
             coverity.connect.user.password=${{ secrets.COVERITY_PASSPHRASE }} \
@@ -33,7 +33,7 @@ jobs:
       if: ${{ github.event_name == 'pull_request' }}
       run: |
         curl -fLsS -o bridge.zip ${{ vars.BRIDGECLI_LINUX64 }} && unzip -qo -d $RUNNER_TEMP bridge.zip && rm -f bridge.zip
-        $RUNNER_TEMP/synopsys-bridge --verbose --stage connect \
+        $RUNNER_TEMP/synopsys-bridge --stage connect \
             coverity.connect.url=${{ vars.COVERITY_URL }} \
             coverity.connect.user.name=${{ secrets.COV_USER }} \
             coverity.connect.user.password=${{ secrets.COVERITY_PASSPHRASE }} \
