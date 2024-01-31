@@ -1,5 +1,5 @@
 # example workflow for Coverity thin client with CNC scan farm
-name: cnc-thin-client
+name: coverity-thin-client
 on:
   push:
     branches: [ main, master, develop, stage, release ]
