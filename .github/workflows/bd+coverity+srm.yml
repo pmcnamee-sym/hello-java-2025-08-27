@@ -1,4 +1,6 @@
-# example pipeline standalone Black Duck, Coverity and SRM (Code DX)
+# example workflow for standalone Black Duck, Coverity and SRM (Code DX)
+# Black Duck and Coverity full scans on push to specified branches with upload to SRM
+# Black Duck RAPID and Coverity Comparison scans on pull requests with PR comments enabled
 name: bd+coverity+srm
 on:
   push:
