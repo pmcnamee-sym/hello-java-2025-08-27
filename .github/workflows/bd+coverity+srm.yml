@@ -76,12 +76,13 @@ jobs:
       with:
         server-url: ${{ vars.SRM_URL }}/codedx
         api-key: ${{ secrets.SRM_APIKEY }}
-        project-id: '4'     # ER CDX-1693 to support project-name
+        project-id: '4'     # ER CDX-1693 support project-name
+        # branch-name:      # ER CDX-1666 support branch-name
         source-and-binaries-glob: './**'
         wait-for-completion: false
 #    - name: Save Logs
 #      if: always()
-#      uses: actions/upload-artifact@v3
+#      uses: actions/upload-artifact@v4
 #      with:
 #        name: bridge-logs
 #        path: ${{ github.workspace }}/.bridge

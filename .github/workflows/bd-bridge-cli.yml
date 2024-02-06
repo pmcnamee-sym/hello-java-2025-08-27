@@ -57,7 +57,7 @@ jobs:
             github.user.token=${{ secrets.GITHUB_TOKEN }}
 #    - name: Save Logs
 #      if: always()
-#      uses: actions/upload-artifact@v3
+#      uses: actions/upload-artifact@v4
 #      with:
 #        name: bridge-logs
 #        path: ${{ github.workspace }}/.bridge
