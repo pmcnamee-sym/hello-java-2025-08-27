@@ -76,8 +76,8 @@ jobs:
       with:
         server-url: ${{ vars.SRM_URL }}/codedx
         api-key: ${{ secrets.SRM_APIKEY }}
-        project-id: '4'     # ER CDX-1693 support project-name
-        # branch-name:      # ER CDX-1666 support branch-name
+        project-id: "4;branch=${{ github.ref_name }}"   # ER CDX-1693 support project-name
+        # branch-name:                                  # ER CDX-1666 support branch-name
         source-and-binaries-glob: './**'
         wait-for-completion: false
 #    - name: Save Logs
