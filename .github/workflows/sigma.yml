@@ -1,10 +1,6 @@
+# example workflow for Sigma scans with SARIF export to GitHub Advanced Security
 name: sigma
-on:
-  push:
-    branches: [ main, master, develop, stage, release ]
-  pull_request:
-    branches: [ main, master, develop, stage, release ]
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 jobs:
   sigma:
     runs-on: ubuntu-latest
@@ -14,7 +10,7 @@ jobs:
     - name: Download SIGMA
       run: curl -fLsS -o ${{ runner.temp }}/sigma ${{ vars.SIGMA_DOWNLOAD_URL }} && chmod +x ${{ runner.temp }}/sigma
     - name: SIGMA analysis
-      run: ${{ runner.temp }}/sigma analyze --format github .
+      run: ${{ runner.temp }}/sigma analyze --format github
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
