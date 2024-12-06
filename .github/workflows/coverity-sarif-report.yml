@@ -1,5 +1,5 @@
-# example workflow for Coverity scans using the Synopsys Action
-# https://github.com/marketplace/actions/synopsys-action
+# example workflow for Coverity scans using the Black Duck Security Scan Action
+# https://github.com/marketplace/actions/black-duck-security-scan
 name: coverity-sarif-report
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         distribution: microsoft
         cache: maven
     - name: Coverity Full Scan
-      uses: synopsys-sig/synopsys-action@v1.13.0
+      uses: blackduck-inc/black-duck-security-scan@v2.0.0
       with:
         coverity_url: ${{ vars.COVERITY_URL }}
         coverity_user: ${{ secrets.COV_USER }}
