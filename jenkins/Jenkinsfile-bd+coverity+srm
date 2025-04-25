@@ -13,8 +13,8 @@ pipeline {
         DETECT_PROJECT_NAME = "${env.REPO_NAME}"
     }
     tools {
-        maven 'maven-3.9'
-        jdk 'openjdk-17'
+        maven 'maven-3'
+        jdk 'openjdk-21'
     }
     stages {
         stage('Build') {

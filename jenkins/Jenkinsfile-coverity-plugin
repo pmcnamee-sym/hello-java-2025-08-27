@@ -9,8 +9,8 @@ pipeline {
         GITHUB_TOKEN = credentials('github-pat')
     }
     tools {
-        maven 'maven-3.9'
-        jdk 'openjdk-17'
+        maven 'maven-3'
+        jdk 'openjdk-21'
     }
     stages {
         stage('Build') {
