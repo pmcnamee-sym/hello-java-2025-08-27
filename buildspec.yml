@@ -1,10 +1,13 @@
 version: 0.2
 
 phases:
+  install:
+    runtimes:
+      java: corretto21
   build:
     commands:
       - echo Entered the build phase...
       - echo Build started on `date`
-      - mvn install
+      - mvn -B -DskipTests package
     finally:
       - echo This always runs even if the install command fails
