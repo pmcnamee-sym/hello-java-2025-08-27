@@ -4,9 +4,10 @@ pipeline {
     agent any
     stages {
         stage('Polaris') {
-		withCredentials([string(credentialsId: 'polaris_token', variable: 'POLARIS_API_TOKEN')]) {
+		
 		
             steps {
+			withCredentials([string(credentialsId: 'polaris_token', variable: 'POLARIS_API_TOKEN')]) {
                 security_scan product: 'polaris',
                     polaris_assessment_types: 'SAST,SCA',
 					polaris_assessment_mode: 'SOURCE_UPLOAD',
@@ -16,10 +17,11 @@ pipeline {
 					polaris_branch_name: 'main',
                     mark_build_status: 'UNSTABLE',
                     include_diagnostics: false
-            }
+            } // with Cred
+			} 
         }
     }
-	} // with Cred
+
     post {
         always {
             cleanWs()
