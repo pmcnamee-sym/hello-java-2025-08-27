@@ -13,7 +13,7 @@ pipeline {
 					polaris_assessment_mode: 'SOURCE_UPLOAD',
                     polaris_application_name: 'hello-java',
                     polaris_project_name: 'hello-java',
-					polaris_access_token: '${POLARIS_API_TOKEN}',
+					polaris_access_token: "${POLARIS_API_TOKEN}",
 					polaris_branch_name: 'main',
                     mark_build_status: 'UNSTABLE',
                     include_diagnostics: false
