@@ -8,6 +8,7 @@ pipeline {
 		
             steps {
 			withCredentials([string(credentialsId: 'polaris_token', variable: 'POLARIS_API_TOKEN')]) {
+				sh 'whoami'
                 security_scan product: 'polaris',
                     polaris_assessment_types: 'SAST',
 					polaris_assessment_mode: 'SOURCE_UPLOAD',
