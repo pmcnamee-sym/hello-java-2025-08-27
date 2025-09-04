@@ -1,7 +1,7 @@
 // example Jenkinsfile for Polaris scans using the Black Duck Security Scan Plugin
 // https://plugins.jenkins.io/blackduck-security-scan
 pipeline {
-    agent any
+    agent linux
     stages {
         stage('Polaris') {
 		
